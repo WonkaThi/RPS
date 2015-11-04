@@ -7,6 +7,9 @@ using namespace cocos2d;
 
 class LoginScene : public Layer
 {
+	Button *m_btnLogin;
+	Node *m_loginNode;
+	void callBackBtn(Ref *sender, Widget::TouchEventType type);
 public:
     static Scene* createScene();
 	virtual bool init();

@@ -1,6 +1,9 @@
 #include "AppDelegate.h"
 #include "Scene/GameScene.h"
 #include "Scene/LoadingScene.h"
+#if(CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
+#include "PluginFacebook/PluginFacebook.h"
+#endif
 
 USING_NS_CC;
 
@@ -36,6 +39,9 @@ static int register_all_packages()
 }
 
 bool AppDelegate::applicationDidFinishLaunching() {
+#if(CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
+	sdkbox::PluginFacebook::init();
+#endif
     // initialize director
     auto director = Director::getInstance();
     auto glview = director->getOpenGLView();

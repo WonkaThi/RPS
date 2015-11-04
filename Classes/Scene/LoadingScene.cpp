@@ -1,5 +1,6 @@
 #include "LoadingScene.h"
 #include "GameScene.h"
+#include "LoginScene.h"
 
 Scene* LoadingScene::createScene()
 {
@@ -45,7 +46,7 @@ void LoadingScene::update(float dt){
 			m_lblPercent->setString(StringUtils::format("Loading: %d", percent));
 			if (percent >= 100) {
 				unscheduleUpdate();
-				Director::getInstance()->replaceScene(GameScene::createScene());
+				Director::getInstance()->replaceScene(LoginScene::createScene());
 			}
 		}
 		m_lastPercent = percent;

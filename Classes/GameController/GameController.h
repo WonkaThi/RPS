@@ -6,6 +6,8 @@
 #include "ResourceController.h"
 #include "ButtonController.h"
 #include "LabelController.h"
+#include "FacebookController.h"
+#include "../Prefix.h"
 
 class GC
 {
@@ -15,12 +17,14 @@ class GC
 	ButtonController *m_btnController;
 	SpriteController *m_sprController;
 	ResourceController *m_resourceController;
+	FacebookController *m_fbController;
 public:
 	static GC *gI();
 	LabelController *lbl();
 	ButtonController *btn();
 	SpriteController *spr();
 	ResourceController *resoure();
+	FacebookController *fb();
 };
 
 #endif // __HELLOWORLD_SCENE_H__
